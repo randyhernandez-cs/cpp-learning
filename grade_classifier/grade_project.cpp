@@ -1,10 +1,6 @@
 #include <iostream>
 bool GradePorF(int Grade) {
-	if (Grade >= 70 && Grade <= 100)
-		std::cout << "You Passed!" << '\n';
-	else
-		std::cout << "You failed!" << '\n';
-	return 0;
+	return Grade >= 60;
 }
 
 
@@ -14,7 +10,14 @@ int main()
 	unsigned int Grade{};
 	std::cout << "Please enter grade in number form to convert to letter form:" << '\n';
 	std::cin >> Grade;
-	GradePorF(Grade);
+	if (GradePorF(Grade))
+	{
+		std::cout << "You Passed!" << '\n';
+	}
+	else
+	{
+		std::cout << "you Failed!" << '\n';
+	}
 	if (Grade < 100 && Grade >= 90)
 		std::cout << "You got a A!" << '\n';
 	else if (Grade <= 89 && Grade >= 80)
