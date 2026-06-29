@@ -1,2 +1,7 @@
-﻿  NumberClassifierFunctions.cpp
+﻿  Number Classifier.cpp
+C:\Users\randy\source\repos\cpp-learning\Number Classifier\Number Classifier\Number Classifier.cpp(11,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\randy\source\repos\cpp-learning\Number Classifier\Number Classifier\Number Classifier.cpp(12,31): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\randy\source\repos\cpp-learning\Number Classifier\Number Classifier\Number Classifier.cpp(13,20): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  NumberClassifierFunctions.cpp
+  Generating Code...
   Number Classifier.vcxproj -> C:\Users\randy\source\repos\cpp-learning\Number Classifier\x64\Debug\Number Classifier.exe
