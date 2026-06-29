@@ -1,7 +1,7 @@
 #include "NumberClassifier.h"
 #include <iostream>
 
-bool isSingleDigit(int Numbertest4) {
+bool isSingleDigit(int Numbertest4) {	// returns true if number is between 1-9
 	if (Numbertest4 < 10) {
 		return true;
 	}
@@ -11,7 +11,7 @@ bool isSingleDigit(int Numbertest4) {
 }
 
 bool EorO(int Numbertest){
-	if (Numbertest % 2 == 0)
+	if (Numbertest % 2 == 0)	// remainder is zero → number is even
 	{
 		return true;
 	}
@@ -20,6 +20,7 @@ bool EorO(int Numbertest){
 		return false;
 	}
 }
+// Prints whether a number is even or odd using EorO()
 double Classification(int NumberTest2){
 	if (EorO(NumberTest2))
 	{
@@ -31,6 +32,7 @@ double Classification(int NumberTest2){
 	}
 	return 0;
 }
+// Prints whether a number is positive, negative, or zero
 double PorNorO(int NumberTest3) {
 	if (NumberTest3 > 0) {
 		std::cout << "This number is positive" << '\n';
@@ -43,6 +45,7 @@ double PorNorO(int NumberTest3) {
 	}
 	return 0;
 }
+// Prints whether a number is single (1-9), double (10-99), triple (100-999), or quad digit (1000+)
 double numberRange(int NumberTest4) {
 	if (isSingleDigit(NumberTest4)) {
 		std::cout << "This number is single digit" << '\n';
