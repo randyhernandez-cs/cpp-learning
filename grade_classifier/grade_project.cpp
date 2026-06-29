@@ -19,8 +19,10 @@ int main()	// Grading calculator that turns numeral form into letter form
 	{
 		std::cout << "you Failed!" << '\n';
 	}
-	if (Grade < 100 && Grade >= 90)		// If-else chain clarifying which number goes to which letter form
+	if (Grade < 99 && Grade >= 90)		// If-else chain clarifying which number goes to which letter form
 		std::cout << "You got a A!" << '\n';
+	else if (Grade == 100)
+		std::cout << "You got a perfect score!" << '\n';
 	else if (Grade <= 89 && Grade >= 80)
 		std::cout << "You got a B!" << '\n';
 	else if (Grade <= 79 && Grade >= 70)
