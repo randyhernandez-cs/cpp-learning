@@ -8,5 +8,6 @@ int main()
     std::string name{};
     std::getline(std::cin >> std::ws, name);    // reads full line, discards leading whitespace
     countCharacters(name);  // displays character count of the entered name
+    findCharacters(name);
 }
 

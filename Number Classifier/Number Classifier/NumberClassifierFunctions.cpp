@@ -26,7 +26,7 @@ double printEvenOrOdd(int number){
 	{
 		std::cout << "this number is even" << '\n';
 }
-	else 
+	else	
 	{
 		std::cout << "this number is odd" << '\n';
 	}
