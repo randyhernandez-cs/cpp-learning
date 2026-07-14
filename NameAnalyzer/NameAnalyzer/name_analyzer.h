@@ -4,4 +4,4 @@
 
 
 int countCharacters(std::string name);	// Returns the number of characters in the provided name
-void findCharacters(std::string name);
+void findCharacters(std::string name);	// reads the characters
