@@ -10,3 +10,14 @@ ipch/
 *.VC.db-wal
 *.VC.opendb
 *.ipch
+
+# Build artifacts
+Debug/
+Release/
+x64/
+*.tlog
+*.ilk
+*.obj
+*.idb
+*.pdb
+*.exe
