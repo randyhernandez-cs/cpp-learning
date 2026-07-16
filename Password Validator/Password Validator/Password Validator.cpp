@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-
+#include "password_validator.h"
 int main()
 {
     std::string password{};
@@ -11,5 +11,9 @@ int main()
     std::cout << "Contains !@#$% etc." << '\n';
     std::cout << "Password Validation Check:" << '\n';
     std::getline(std::cin >> std::ws, password);
+    if (isLongEnough(password))
+        std::cout << "Password is long enough.\n";
+    else
+        std::cout << "Password is too short.\n";
 }
 
