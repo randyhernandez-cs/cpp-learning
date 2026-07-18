@@ -10,4 +10,15 @@ ipch/
 *.VC.db-wal
 *.VC.opendb
 *.ipch
-/Password Validator/Password Validator/x64/Debug/Password.8d727d73.tlog/CL.command.1.tlog
+
+# Build artifacts
+Debug/
+Release/
+x64/
+*.tlog
+*.ilk
+*.obj
+*.idb
+*.pdb
+*.exe
+
