@@ -10,3 +10,4 @@ ipch/
 *.VC.db-wal
 *.VC.opendb
 *.ipch
+/Password Validator/Password Validator/x64/Debug/Password.8d727d73.tlog/CL.command.1.tlog
