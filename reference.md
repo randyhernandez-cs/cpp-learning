@@ -89,3 +89,72 @@ Used for combining or flipping conditions.
 
 ### Conditional Operator (`?:`)
 A compact if/else that returns a value.
+
+**Example:** `int max = (x > y) ? x : y;`
+
+**Key rules:**
+- Both branches must return the same type
+- Parenthesize the whole thing in compound expressions: `std::cout << (x > y ? x : y);`
+- Best for simple value selection. Use `if`/`else` for complex logic.
+
+## Parentheses Rules: `()`, `{}`, and `[]`
+
+These three bracket types look similar but have completely different jobs. Using the wrong one causes compile errors.
+
+### `()` — Parentheses
+Used for **functions** — declaring them, calling them, and controlling expression order.
+
+| Context | Example | What It Does |
+|---|---|---|
+| Function declaration | `int foo(int x)` | "foo takes an int parameter" |
+| Function call | `foo(5)` | "Call foo with argument 5" |
+| Grouping expressions | `(x + y) * z` | Forces addition before multiplication |
+| Wrapping conditions | `if (x > 5)` | Required around if/while conditions |
+| `static_cast` | `static_cast<double>(x)` | Type conversion |
+
+### `{}` — Braces (Curly Brackets)
+Used for **initialization** and **code blocks**.
+
+| Context | Example | What It Does |
+|---|---|---|
+| Variable initialization | `int x{5}` | Creates x with value 5 (preferred modern style) |
+| Empty initialization | `int x{}` | Creates x with default value (0) |
+| Function body | `int foo() { return 5; }` | Contains the function's code |
+| If/else blocks | `if (x) { ... }` | Contains conditional code |
+
+**Key rule:** `std::string name{};` creates an empty string. `std::string name();` declares a FUNCTION — classic C++ gotcha. Always use `{}` for variables.
+
+### `[]` — Square Brackets
+Used for **indexing** into strings and arrays.
+
+| Context | Example | What It Does |
+|---|---|---|
+| String indexing | `name[0]` | First character of the string |
+| String indexing | `name[i]` | Character at position i |
+| Arrays (later) | `arr[0]` | First element of an array |
+
+**Key rule:** `name[0]` gives a character. `name(0)` tries to call name as a function — not the same thing.
+
+---
+
+## `const` vs `constexpr`
+
+Both create values that can't be changed. The difference is **when** the value is known.
+
+| Keyword | Meaning | When Value Is Set | Example |
+|---|---|---|---|
+| `const` | "Won't change after initialization" | Can be runtime (user input, calculation) | `const int x{userInput};` |
+| `constexpr` | "Known at compile time" | Must be compile-time (literal, constexpr) | `constexpr double gravity{9.8};` |
+
+### Key Rules
+- All `constexpr` variables are implicitly `const`
+- `constexpr` requires a compile-time constant initializer
+- Use `const` by default. Use `constexpr` for true compile-time constants (physics values, fixed limits)
+- Function parameters can be `const` but never `constexpr`
+
+### Examples
+```cpp
+const int a{5};              // ✅ 5 is a literal
+const int b{userInput};      // ✅ Value from user, locked after
+constexpr int c{5};          // ✅ 5 is compile-time
+constexpr int d{userInput};  // ❌ userInput not known at compile time
