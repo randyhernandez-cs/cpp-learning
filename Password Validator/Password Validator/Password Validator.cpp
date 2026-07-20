@@ -11,9 +11,21 @@ int main()
     std::cout << "Contains !@#$% etc." << '\n';
     std::cout << "Password Validation Check:" << '\n';
     std::getline(std::cin >> std::ws, password);
-    if (isLongEnough(password))
+    if (isLongEnough(password)) 
+    {
         std::cout << "Password is long enough.\n";
+    }
     else
+    {
         std::cout << "Password is too short.\n";
+    }
+    if (hasUpperCase(password))
+    {
+        std::cout << "You have a capital letter!" << '\n';
+    }
+    else
+    {
+        std::cout << "You do not have a capital letter!" << '\n';
+    }
 }
 
