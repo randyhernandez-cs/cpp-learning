@@ -158,3 +158,27 @@ const int a{5};              // ✅ 5 is a literal
 const int b{userInput};      // ✅ Value from user, locked after
 constexpr int c{5};          // ✅ 5 is compile-time
 constexpr int d{userInput};  // ❌ userInput not known at compile time
+
+## Floating-Point Comparison Safety
+
+Floating-point numbers (`float`, `double`) can't represent every decimal value exactly. Just like 1/3 in decimal is 0.3333... with infinite digits, some simple decimals like 0.1 are infinite in binary. The computer stores the closest approximation, creating tiny rounding errors.
+
+### The Problem
+```cpp
+double a{0.1 + 0.2};  // Might be 0.30000000000000004, not exactly 0.3
+double b{0.3};
+
+if (a == b)  // ❌ May fail due to tiny difference
+
+### Why Precision Varies by Type
+
+Each floating-point type has limited "space" for significant digits:
+
+| Type | Typical Size | Significant Digits |
+|---|---|---|
+| `float` | 4 bytes | ~7 digits |
+| `double` | 8 bytes | ~15-16 digits |
+| `long double` | 8-16 bytes | ~18+ digits |
+
+A `float` runs out of precision after about 7 digits — any extra digits are rounding noise. A `double` gives you roughly double the space before precision loss occurs. This is why `double` is the default choice for most calculations.
+
