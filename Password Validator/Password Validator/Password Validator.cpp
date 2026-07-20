@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "password_validator.h"
-int main()
+int main()  // Application to detect if password is viable to be a password.
 {
     std::string password{};
     std::cout << "A password should have these things for minimum password protection:" << '\n';
@@ -11,7 +11,7 @@ int main()
     std::cout << "Contains !@#$% etc." << '\n';
     std::cout << "Password Validation Check:" << '\n';
     std::getline(std::cin >> std::ws, password);
-    if (isLongEnough(password)) 
+    if (isLongEnough(password)) // Detects if password is long enough
     {
         std::cout << "Password is long enough.\n";
     }
@@ -19,7 +19,7 @@ int main()
     {
         std::cout << "Password is too short.\n";
     }
-    if (hasUpperCase(password))
+    if (hasUpperCase(password)) // Detects if password has uppercase.
     {
         std::cout << "You have a capital letter!" << '\n';
     }
