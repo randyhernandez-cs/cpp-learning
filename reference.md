@@ -157,7 +157,8 @@ Both create values that can't be changed. The difference is **when** the value i
 const int a{5};              // ✅ 5 is a literal
 const int b{userInput};      // ✅ Value from user, locked after
 constexpr int c{5};          // ✅ 5 is compile-time
-constexpr int d{userInput};  // ❌ userInput not known at compile time
+constexpr int d{userInput};  // ❌ userInput not known at compile time 
+```
 
 ## Floating-Point Comparison Safety
 
