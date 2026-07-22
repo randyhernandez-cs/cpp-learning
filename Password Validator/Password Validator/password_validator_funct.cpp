@@ -13,3 +13,7 @@ bool hasNumber(std::string passwordNumber)
 {
 	return (passwordNumber[0] >= '0' && passwordNumber[0] <= '9'|| passwordNumber[1] >= '0' && passwordNumber[1] <= '9'|| passwordNumber[2] >= '0' && passwordNumber[2] <= '9');
 }
+bool hasSpecial(std::string passwordSpecial)
+{
+	return (passwordSpecial[0] == '!' || passwordSpecial[0] == '@' || passwordSpecial[0] == '#' || passwordSpecial[0] == '$' );
+}

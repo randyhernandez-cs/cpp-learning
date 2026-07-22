@@ -36,5 +36,13 @@ int main()  // Application to detect if password is viable to be a password.
     {
         std::cout << "You do not have a number" << '\n';
     }
+    if (hasSpecial(password)) // Detects if first integer has special variable
+    {
+        std::cout << "You have a special number!" << '\n';
+    }
+    else
+    {
+        std::cout << "You do not have a special number!" << '\n';
+    }
 }
 
