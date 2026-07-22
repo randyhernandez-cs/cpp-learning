@@ -183,3 +183,20 @@ Each floating-point type has limited "space" for significant digits:
 
 A `float` runs out of precision after about 7 digits — any extra digits are rounding noise. A `double` gives you roughly double the space before precision loss occurs. This is why `double` is the default choice for most calculations.
 
+## Inline Functions
+
+An inline function is a hint to the compiler: "Instead of calling this function, copy its code directly to where it's called." This can make programs faster by avoiding function call overhead.
+
+### How It Works
+
+```cpp
+inline int add(int x, int y)  // inline keyword suggests inlining
+{
+    return x + y;
+}
+
+int main()
+{
+    int result{add(3, 5)};  // Compiler may replace this with: int result{3 + 5};
+    return 0;
+}
