@@ -3,7 +3,7 @@
 Learning C++ through projects. Building fundamentals toward physics simulations and scientific computing.
 
 ## Current Progress
-- **Chapter 7:** Scope, Duration, and Linkage
+- **Chapter 8:** Control Flow (in progress)
 - **CPE Certification:** In progress (target: August 23, 2026)
 
 ## Projects
