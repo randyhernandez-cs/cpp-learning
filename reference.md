@@ -157,12 +157,11 @@ Both create values that can't be changed. The difference is **when** the value i
 const int a{5};              // ✅ 5 is a literal
 const int b{userInput};      // ✅ Value from user, locked after
 constexpr int c{5};          // ✅ 5 is compile-time
-constexpr int d{userInput};  // ❌ userInput not known at compile time 
-```
+constexpr int d{userInput};  // ❌ userInput not known at compile time
 
-## Floating-Point Comparison Safety
+---## Floating-Point Comparison Safety
 
-Floating-point numbers (`float`, `double`) can't represent every decimal value exactly. Just like 1/3 in decimal is 0.3333... with infinite digits, some simple decimals like 0.1 are infinite in binary. The computer stores the closest approximation, creating tiny rounding errors.
+Floating-point numbers (`float`, `double`) can't represent every decimal value exactly. The computer stores the closest approximation, creating tiny rounding errors.
 
 ### The Problem
 ```cpp
@@ -170,10 +169,9 @@ double a{0.1 + 0.2};  // Might be 0.30000000000000004, not exactly 0.3
 double b{0.3};
 
 if (a == b)  // ❌ May fail due to tiny difference
+```
 
 ### Why Precision Varies by Type
-
-Each floating-point type has limited "space" for significant digits:
 
 | Type | Typical Size | Significant Digits |
 |---|---|---|
@@ -181,25 +179,20 @@ Each floating-point type has limited "space" for significant digits:
 | `double` | 8 bytes | ~15-16 digits |
 | `long double` | 8-16 bytes | ~18+ digits |
 
-A `float` runs out of precision after about 7 digits — any extra digits are rounding noise. A `double` gives you roughly double the space before precision loss occurs. This is why `double` is the default choice for most calculations.
+`double` is the default choice for most calculations.
 
 ## Inline Functions
 
-An inline function is a hint to the compiler: "Instead of calling this function, copy its code directly to where it's called." This can make programs faster by avoiding function call overhead.
-
-### How It Works
+An inline function is a hint to the compiler: "Instead of calling this function, copy its code directly to where it's called."
 
 ```cpp
-inline int add(int x, int y)  // inline keyword suggests inlining
+inline int add(int x, int y)
 {
     return x + y;
 }
+```
 
-int main()
-{
-    int result{add(3, 5)};  // Compiler may replace this with: int result{3 + 5};
-    return 0;
-} ```
+The compiler may or may not honor the hint. Modern compilers inline automatically when beneficial. Use `inline` only when defining functions in header files to avoid linker errors.
 
 ## Loops
 
@@ -213,3 +206,55 @@ while (condition)
 {
     // body executes as long as condition is true
 }
+```
+
+**Use when:** You don't know how many iterations you need.
+
+### Do-While Loop
+Like `while`, but checks the condition **after** the body. Always runs at least once.
+
+```cpp
+do
+{
+    // body executes first, then condition is checked
+} while (condition);
+```
+
+**Use when:** The code must run at least once.
+
+### For Loop
+Runs a specific number of times. Initialization, condition, and increment all in one line.
+
+```cpp
+for (initialization; condition; increment)
+{
+    // body executes each iteration
+}
+```
+
+**Example:**
+```cpp
+for (int i{0}; i < 10; ++i)
+{
+    std::cout << i << ' ';  // prints 0 1 2 ... 9
+}
+```
+
+**Use when:** You know how many times to loop.
+
+### Choosing the Right Loop
+
+| Loop | Use When |
+|---|---|
+| `while` | Unknown number of iterations, condition-driven |
+| `do-while` | Must execute at least once |
+| `for` | Known number of iterations (arrays, strings, ranges) |
+
+### Common Pattern: Looping Through a String
+```cpp
+std::string word{"hello"};
+for (int i{0}; i < word.length(); ++i)
+{
+    // word[i] gives each character in order
+}
+```
