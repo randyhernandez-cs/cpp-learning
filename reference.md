@@ -199,4 +199,17 @@ int main()
 {
     int result{add(3, 5)};  // Compiler may replace this with: int result{3 + 5};
     return 0;
+} ```
+
+## Loops
+
+Loops repeat a block of code multiple times. C++ has three loop types.
+
+### While Loop
+Repeats **while** a condition is true. Checks the condition first — may run zero times.
+
+```cpp
+while (condition)
+{
+    // body executes as long as condition is true
 }
