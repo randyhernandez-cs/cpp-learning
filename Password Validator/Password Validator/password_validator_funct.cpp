@@ -7,7 +7,14 @@ bool isLongEnough(std::string passwordLimit)
 }
 bool hasUpperCase(std::string passwordLimit)
 {
-	return (passwordLimit[0] >= 'A' && passwordLimit[0] <= 'Z') || (passwordLimit[1] >= 'A' && passwordLimit[1] <= 'Z') || (passwordLimit[2] >= 'A' && passwordLimit[2] <= 'Z');
+	for (int i{ 0 }; i < passwordLimit.length(); ++i)
+	{
+		if (passwordLimit[i] >= 'A' && passwordLimit[i] <= 'Z')
+		{
+			return true;
+		}
+	}
+	return false;
 }
 bool hasNumber(std::string passwordNumber)
 {
