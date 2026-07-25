@@ -18,7 +18,14 @@ bool hasUpperCase(std::string passwordLimit)
 }
 bool hasNumber(std::string passwordNumber)
 {
-	return (passwordNumber[0] >= '0' && passwordNumber[0] <= '9'|| passwordNumber[1] >= '0' && passwordNumber[1] <= '9'|| passwordNumber[2] >= '0' && passwordNumber[2] <= '9');
+	for (int i{ 0 }; i < passwordNumber.length(); ++i)
+	{
+		if (passwordNumber[i] >= '0' && passwordNumber[i] <= '9')
+		{
+			return true;
+		}
+	}
+	return false;
 }
 bool hasSpecial(std::string passwordSpecial)
 {
