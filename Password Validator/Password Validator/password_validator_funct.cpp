@@ -29,5 +29,12 @@ bool hasNumber(std::string passwordNumber)
 }
 bool hasSpecial(std::string passwordSpecial)
 {
-	return (passwordSpecial[0] == '!' || passwordSpecial[0] == '@' || passwordSpecial[0] == '#' || passwordSpecial[0] == '$' );
+		for (int i{ 0 }; i < passwordSpecial.length(); ++i)
+		{
+			if (passwordSpecial[i] == '!' || passwordSpecial[i] == '@'|| passwordSpecial[i] == '#' || passwordSpecial[i] == '$' || passwordSpecial[i] == '%' || passwordSpecial[i] == '^' || passwordSpecial[i] == '&' || passwordSpecial[i] == '*' )
+			{
+				return true;
+			}
+		}
+		return false;
 }

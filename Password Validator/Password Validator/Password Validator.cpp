@@ -4,7 +4,6 @@
 int main()  // Application to detect if password is viable to be a password.
 {
     std::string password{};
-    std::cout << "PROTOTYPE: Have not learned arrays so checks only first 2 integers for variables" << '\n';
     std::cout << "A password should have these things for minimum password protection:" << '\n';
     std::cout << "At least 8 characters." << '\n';
     std::cout << "Contains at least one A-Z and a-z" << '\n';
