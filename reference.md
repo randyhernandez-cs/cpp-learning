@@ -259,3 +259,26 @@ for (int i{0}; i < word.length(); ++i)
     // word[i] gives each character in order
 }
 ```
+
+### Loop Control: `break`, `continue`, and `return`
+
+| Keyword | What It Does | Exits What? |
+|---|---|---|
+| `break` | Exits the loop immediately | The loop only — code after the loop still runs |
+| `continue` | Skips the rest of this iteration, goes to next | Nothing — loop keeps running |
+| `return` | Exits the entire function | The function — no code after it runs |
+
+**Examples:**
+
+```cpp
+for (int i{0}; i < 10; ++i)
+{
+    if (i == 5)
+        break;       // Loop ends at i=5. Code after loop runs.
+    
+    if (i == 3)
+        continue;    // Skips printing 3, but loop continues to 4, 5...
+    
+    std::cout << i;  // Prints 0 1 2 4 (3 skipped, stops at 5)
+}
+// break sends you here
