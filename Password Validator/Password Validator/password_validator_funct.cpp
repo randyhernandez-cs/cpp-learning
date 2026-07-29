@@ -1,9 +1,7 @@
 #include "password_validator.h"
 #include <string>
 #include <iostream>
-namespace Passwordcheck {
-
-}
+char retry{};
 bool isLongEnough(std::string passwordLimit) 
 {
 	return (passwordLimit.length() >= 8);
