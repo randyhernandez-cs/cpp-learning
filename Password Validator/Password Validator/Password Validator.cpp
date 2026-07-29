@@ -4,7 +4,7 @@
 int main()  // Application to detect if password is viable to be a password.
 {
     char retry{};
-    do
+    do      // validates and displays all results
     {
         std::string password{};
         std::cout << "A password should have these things for minimum password protection:" << '\n';

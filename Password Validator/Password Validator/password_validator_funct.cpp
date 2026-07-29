@@ -1,11 +1,12 @@
 #include "password_validator.h"
 #include <string>
 #include <iostream>
-char retry{};
+// Returns true if password is at least 8 characters
 bool isLongEnough(std::string passwordLimit) 
 {
 	return (passwordLimit.length() >= 8);
 }
+// Returns true if password contains at least one uppercase letter
 bool hasUpperCase(std::string passwordLimit)
 {
 	for (int i{ 0 }; i < passwordLimit.length(); ++i)
@@ -17,6 +18,7 @@ bool hasUpperCase(std::string passwordLimit)
 	}
 	return false;
 }
+// Returns true if password contains at least one digit
 bool hasNumber(std::string passwordNumber)
 {
 	for (int i{ 0 }; i < passwordNumber.length(); ++i)
@@ -28,6 +30,7 @@ bool hasNumber(std::string passwordNumber)
 	}
 	return false;
 }
+// Returns true if password contains at least one special character
 bool hasSpecial(std::string passwordSpecial)
 {
 		for (int i{ 0 }; i < passwordSpecial.length(); ++i)
@@ -39,6 +42,7 @@ bool hasSpecial(std::string passwordSpecial)
 		}
 		return false;
 }
+// Runs all password checks, prints results, returns true only if all checks pass
 bool passwordCheck(std::string password)
 {
 	bool x{ true };
