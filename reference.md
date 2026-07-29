@@ -135,6 +135,43 @@ Used for **indexing** into strings and arrays.
 
 **Key rule:** `name[0]` gives a character. `name(0)` tries to call name as a function — not the same thing.
 
+## Function Parameters: What to Pass By
+
+### The Rule of Thumb
+
+| Type | Pass By | Example |
+|---|---|---|
+| Fundamental types (`int`, `double`, `char`, `bool`) | Value | `void foo(int x)` |
+| Class types (`std::string`, `std::vector`, structs) | `const` reference | `void foo(const std::string& s)` |
+| Need to modify the original | Non-const reference | `void foo(int& x)` |
+
+### Why
+
+| Pass By Value | Pass By Const Reference |
+|---|---|
+| Makes a copy — safe, but slow for large objects | No copy — fast, and can't accidentally modify |
+| Best for small types (int, double, char) | Best for strings, vectors, and structs |
+
+### Other Cases
+
+**Pass by value:**
+- Enumerated types
+- Views and spans (`std::string_view`, `std::span`)
+- Cheap-to-copy class types (`std::pair`, `std::optional`)
+
+**Pass by reference:**
+- Arguments that need to be modified by the function
+- Non-copyable types (`std::ostream`, `std::unique_ptr`)
+- Types with virtual functions (to avoid object slicing)
+
+### Strings Specifically
+
+Prefer `std::string_view` (by value) for read-only string parameters, unless you need a C-style string or a `std::string` object.
+
+### When in Doubt
+
+Pass by `const` reference. It's always safe and avoids unexpected copies.
+
 ---
 
 ## `const` vs `constexpr`
@@ -282,3 +319,4 @@ for (int i{0}; i < 10; ++i)
     std::cout << i;  // Prints 0 1 2 4 (3 skipped, stops at 5)
 }
 // break sends you here
+
