@@ -18,6 +18,6 @@ int main()  // Application to detect if password is viable to be a password.
         std::cout << "Do you want to try again? (y/n): ";
         std::cin >> retry;
     } while (retry == 'Y' || retry == 'y');
-        std::cout << "closing program! goodbye!";
+    std::cout << "closing program! goodbye!";
 }
 

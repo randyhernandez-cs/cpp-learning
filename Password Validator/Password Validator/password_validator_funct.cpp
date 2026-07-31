@@ -2,16 +2,16 @@
 #include <string>
 #include <iostream>
 // Returns true if password is at least 8 characters
-bool isLongEnough(std::string passwordLimit) 
+bool isLongEnough(const std::string& passwordLength)
 {
-	return (passwordLimit.length() >= 8);
+	return (passwordLength.length() >= 8);
 }
 // Returns true if password contains at least one uppercase letter
-bool hasUpperCase(std::string passwordLimit)
+bool hasUpperCase(const std::string& passwordCase)
 {
-	for (int i{ 0 }; i < passwordLimit.length(); ++i)
+	for (int i{ 0 }; i < passwordCase.length(); ++i)
 	{
-		if (passwordLimit[i] >= 'A' && passwordLimit[i] <= 'Z')
+		if (passwordCase[i] >= 'A' && passwordCase[i] <= 'Z')
 		{
 			return true;
 		}
@@ -19,7 +19,7 @@ bool hasUpperCase(std::string passwordLimit)
 	return false;
 }
 // Returns true if password contains at least one digit
-bool hasNumber(std::string passwordNumber)
+bool hasNumber(const std::string& passwordNumber)
 {
 	for (int i{ 0 }; i < passwordNumber.length(); ++i)
 	{
@@ -31,7 +31,7 @@ bool hasNumber(std::string passwordNumber)
 	return false;
 }
 // Returns true if password contains at least one special character
-bool hasSpecial(std::string passwordSpecial)
+bool hasSpecial(const std::string& passwordSpecial)
 {
 		for (int i{ 0 }; i < passwordSpecial.length(); ++i)
 		{
@@ -43,7 +43,7 @@ bool hasSpecial(std::string passwordSpecial)
 		return false;
 }
 // Runs all password checks, prints results, returns true only if all checks pass
-bool passwordCheck(std::string password)
+bool passwordCheck(const std::string& password)
 {
 	bool x{ true };
 	if (isLongEnough(password)) 
