@@ -9,7 +9,6 @@ void countCharacters(const std::string& name)
 void findCharacters(const std::string& name) 
 {	
 	size_t spacePosition{ name.find(' ') };
-	size_t initialPosition{ name.find('0') };
-	std::cout << "The First Initial is: " << name[initialPosition + 1] << '\n';
+	std::cout << "The First Initial is: " << name[0] << '\n';
 	std::cout << "The Second Initial is: " << name[spacePosition + 1] << '\n';
 } 
