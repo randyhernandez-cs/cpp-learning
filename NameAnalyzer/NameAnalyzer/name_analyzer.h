@@ -3,5 +3,6 @@
 // Function declarations for the Name Analyzer project
 
 
-int countCharacters(std::string name);	// Returns the number of characters in the provided name
-void findCharacters(std::string name);	// reads the characters
+void countCharacters(const std::string& name);	// Returns the number of characters in the provided name
+void findCharacters(const std::string& name);	// reads the characters
+int countCapitilization(const std::string& name);
