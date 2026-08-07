@@ -2,9 +2,16 @@
 #include <iostream>
 #include <string>
 // prints the name and its character count
-void countCharacters(const std::string& name) 
+int countCharacters(const std::string& name)
 {
-	std::cout << name << " has " << name.length() << " characters" << '\n'; 
+	int count{ 0 };
+	for (int i{ 0 }; i < name.length(); ++i)
+	{
+		if (name[i] != ' ')
+			++count;
+	}
+	std::cout << name << " has " << count << " letters!" << '\n';
+	return count;
 }
 // finds specific position for initials
 void findCharacters(const std::string& name) 
