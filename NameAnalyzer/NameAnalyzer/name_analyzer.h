@@ -1,9 +1,6 @@
 #pragma once
 #include <string>
-// Function declarations for the Name Analyzer project
-
-
-void countCharacters(const std::string& name);	// Returns the number of characters in the provided name
-void findCharacters(const std::string& name);	// reads the characters
-int countCapitilization(const std::string& name);
-int countLowercase(const std::string& name);
+void countCharacters(const std::string& name);		// returns the number of characters in the provided name
+void findCharacters(const std::string& name);		// finds how many letters in name
+int countCapitilization(const std::string& name);	// counts how many capitals in name
+int countLowercase(const std::string& name);		// counts how many lowercases in name
