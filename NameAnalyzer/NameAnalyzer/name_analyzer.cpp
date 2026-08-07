@@ -23,3 +23,15 @@ int countCapitilization(const std::string& name)
 	}
 	return x;
 }
+int countLowercase(const std::string& name)
+{
+	int x{ 0 };
+	for (int i{ 0 }; i < name.length(); ++i)
+	{
+		if (name[i] >= 'a' && name[i] <= 'z')
+		{
+			x += 1;
+		}
+	}
+	return x;
+}

@@ -6,3 +6,4 @@
 void countCharacters(const std::string& name);	// Returns the number of characters in the provided name
 void findCharacters(const std::string& name);	// reads the characters
 int countCapitilization(const std::string& name);
+int countLowercase(const std::string& name);
