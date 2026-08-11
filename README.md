@@ -3,7 +3,7 @@
 Learning C++ through projects. Building fundamentals toward physics simulations and scientific computing.
 
 ## Current Progress
-- **Chapter 12:** Pointers and References (in progress)
+- **Chapter 13:** Structs and Enums (in progress)
 - **CPE Certification:** In progress (target: August 31, 2026)
 
 ## Projects
