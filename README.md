@@ -4,14 +4,15 @@ Learning C++ through projects. Building fundamentals toward physics simulations 
 
 ## Current Progress
 - **Chapter 12:** Pointers and References (in progress)
-- **CPE Certification:** In progress (target: August 23, 2026)
+- **CPE Certification:** In progress (target: August 31, 2026)
 
 ## Projects
 | Project | Description | Concepts |
 |---|---|---|
+| Circle Calculator | Multi-file circle math with validation | Functions, headers, do-while, input validation |
 | Grade Classifier | Numeric grade to letter grade | if/else, bool functions |
 | Number Classifier | Even/odd, positive/negative, digit count | bool functions, if/else chains, operators |
-| Name Analyzer | Character count, initials extraction, capitalization count | std::string, .find(), .length(), for loops |
+| Name Analyzer | Character count, initials extraction, capitalization count | std::string, .find(), .length(), for loops, do-while |
 | Password Validator | Password strength checker with retry loop | const std::string&, bool checks, accumulator pattern, do-while |
 
 ## Documentation
