@@ -320,3 +320,40 @@ for (int i{0}; i < 10; ++i)
 }
 // break sends you here
 
+## Pointers
+
+A pointer stores a memory address.
+
+| Concept | Syntax | Meaning |
+|---|---|---|
+| Declare pointer | `int* p{&x};` | p holds x's address |
+| Dereference | `*p = 5;` | Change x through p |
+| Null pointer | `int* p{nullptr};` | Points to nothing — always initialize |
+| Address-of | `&x` | Gets x's memory address |
+
+### Pointer and Const
+
+| Type | Change Value? | Change Address? |
+|---|---|---|
+| `int*` | ✅ | ✅ |
+| `const int*` | ❌ | ✅ |
+| `int* const` | ✅ | ❌ |
+| `const int* const` | ❌ | ❌ |
+
+### References vs Pointers
+
+| | Reference (`&`) | Pointer (`*`) |
+|---|---|---|
+| Reassignable | ❌ No | ✅ Yes |
+| Can be null | ❌ No | ✅ Yes — `nullptr` |
+| Syntax to access | Just use name | Dereference `*p` |
+| Safety | Safer | More dangerous |
+
+## Function Parameters: In, Out, In/Out
+
+| Role | Syntax | Direction |
+|---|---|---|
+| In (read only) | `int x` or `const int& x` | Caller → Function |
+| Out (write) | `int& x` | Function → Caller |
+| In/out (read + write) | `int& x` | Both directions |
+
