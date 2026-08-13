@@ -319,7 +319,7 @@ for (int i{0}; i < 10; ++i)
     std::cout << i;  // Prints 0 1 2 4 (3 skipped, stops at 5)
 }
 // break sends you here
-
+```
 ## Pointers
 
 A pointer stores a memory address.
