@@ -14,6 +14,7 @@ Learning C++ through projects. Building fundamentals toward physics simulations 
 | Number Classifier | Even/odd, positive/negative, digit count | bool functions, if/else chains, operators |
 | Name Analyzer | Character count, initials extraction, capitalization count | std::string, .find(), .length(), for loops, do-while |
 | Password Validator | Password strength checker with retry loop | const std::string&, bool checks, accumulator pattern, do-while |
+| Sandbox | Practice and experimentation space | Pointers, structs, syntax tests |
 
 ## Documentation
 - **STYLE_GUIDE.md** — Naming conventions and formatting rules
