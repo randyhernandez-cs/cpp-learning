@@ -357,3 +357,47 @@ A pointer stores a memory address.
 | Out (write) | `int& x` | Function → Caller |
 | In/out (read + write) | `int& x` | Both directions |
 
+## Structs
+
+A struct is a custom type that bundles multiple variables together.
+
+### Defining a Struct
+```cpp
+struct Point
+{
+    double x{0.0};   // default member initializer
+    double y{0.0};
+};
+```
+### Creating Instances
+```cpp
+Point origin{};           // defaults: x=0.0, y=0.0
+Point center{5.0, 3.0};   // overrides: x=5.0, y=3.0
+Point copy{center};       // copy of center
+```
+### Accessing Members
+```cpp
+std::cout << center.x;    // prints 5.0
+center.y = 7.0;           // changes y to 7.0
+```
+### Passing Structs to Functions
+
+| Parameter Type | When to Use |
+|---|---|
+| `Point p` | Small struct, need a copy |
+| `const Point& p` | Read-only, no copy — most common |
+| `Point& p` | Function needs to modify the struct |
+
+### Returning Structs
+```cpp
+Point makePoint(double x, double y)
+{
+    return {x, y};   // creates and returns a Point
+}
+```
+Point p{makePoint(1.0, 2.0)};   // p receives the returned Point
+
+### Key Rule
+- Use `const Type&` for read-only struct parameters.
+- Use `Type&` when the function modifies the struct.
+- Return by value for new structs — it's safe and simple.
