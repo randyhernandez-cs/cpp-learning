@@ -21,5 +21,8 @@
     <ClCompile Include="pointers_and_reference.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="structs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
