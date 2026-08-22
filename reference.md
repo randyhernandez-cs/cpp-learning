@@ -401,3 +401,122 @@ Point p{makePoint(1.0, 2.0)};   // p receives the returned Point
 - Use `const Type&` for read-only struct parameters.
 - Use `Type&` when the function modifies the struct.
 - Return by value for new structs — it's safe and simple.
+
+##std::vector
+
+### Creating Vectors
+-initialization between {} and () are different in terms of vectors
+-{} is good for situations where you need specific elements from a vector, it also specifies the value of the element
+-() is good for when you need to initialize many elements without specific values
+-(2) means theres 2 elements in this vector, {2} means there is an element that has the value of 2
+
+### Accessing Elements
+-[index] picks the specific element from a vector, so vector[3] would pick the 3rd index going from 0, 1, 2 , 3(yes we count from zero im sorry) Does not check if there is an index slot available.
+-.at(index) picks the specific element from a vector and checks if there is a slot before attempting to call it, this is called bound checking.
+-Index's start from 0
+
+## `std::vector`
+
+A `std::vector` stores a sequence of elements of the same type.
+
+### Creating Vectors
+
+Initialization with `{}` and `()` can mean different things for vectors.
+
+```cpp
+std::vector<int> a{ 2 };  // One element with the value 2
+std::vector<int> b(2);    // Two int elements
+```
+
+- `{}` is useful when specifying the actual element values that should be stored in the vector.
+- `()` can be used to specify how many elements the vector should initially contain.
+- Therefore, `{ 2 }` means "an element with value 2," while `(2)` means "create 2 elements."
+
+### Accessing Elements
+
+An **index** is the position of an element. Vector indices start at `0`.
+
+```text
+Elements:    [ 10 ][ 20 ][ 30 ][ 40 ][ 50 ]
+Index:          0     1     2     3     4
+```
+
+```cpp
+vector[3]       // Access the element at index 3 (the fourth element)
+vector.at(3)    // Access the same element with bounds checking
+```
+
+- `[index]` accesses the element at the specified index but does not perform bounds checking.
+- `.at(index)` accesses the element at the specified index and performs bounds checking.
+- Index `0` is the first element, index `1` is the second, and so on.
+
+### Vector Size
+
+`.size()` returns the **number of elements** in the vector.
+
+```text
+Elements:    [ 10 ][ 20 ][ 30 ][ 40 ][ 50 ]
+Index:          0     1     2     3     4
+
+size() = 5
+```
+
+The distinction is:
+
+- **Index** = position of an element.
+- **Element** = the object stored at that position.
+- **Value** = the value currently contained in that element.
+- **Size** = total number of elements.
+
+For a vector with 5 elements, the valid indices are `0` through `4`.
+
+### Passing Vectors to Functions
+
+```cpp
+void passingVectors(const std::vector<int>& x)
+```
+
+Breaking the parameter apart:
+
+- `std::vector<int>` — the parameter's type is a vector containing `int` elements.
+- `&` — passes the vector by reference instead of making a copy.
+- `const` — the function cannot modify the vector through this parameter.
+- `x` — the parameter name.
+
+`const std::vector<int>&` is useful when a function needs to read a vector without copying or modifying it.
+
+### Index-Based Loop
+
+```cpp
+void passingVectors(const std::vector<int>& x)
+{
+    for (int y{}; y < x.size(); ++y)
+    {
+        std::cout << x.at(y) << '\n';
+    }
+}
+```
+
+Breaking the loop apart:
+
+```text
+for (int y{}; y < x.size(); ++y)
+     ────────  ───────────  ───
+        │           │        │
+        │           │        └─ Move to the next index
+        │           └────────── Keep going while y is less than the number of elements
+        └────────────────────── Start y at index 0
+```
+
+For a vector with 5 elements:
+
+```text
+y = 0    0 < 5 → run
+y = 1    1 < 5 → run
+y = 2    2 < 5 → run
+y = 3    3 < 5 → run
+y = 4    4 < 5 → run
+y = 5    5 < 5 → false, stop
+```
+
+Inside the loop, `x.at(y)` uses the current value of `y` as an index to access the corresponding element.
