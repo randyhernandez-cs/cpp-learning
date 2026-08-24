@@ -9,6 +9,20 @@ void indexDisplay(const std::vector<int>& x)
 		std::cout << x.at(y) << '\n';
 	}
 }
+void indexChange(std::vector<int>& x)
+{
+	int y{};
+	std::cout << "Which index would you like to change? (0-4)" << '\n';
+	std::cin >> y;
+	if (y >= x.size() || y <= -1)
+	{
+		std::cout << "Please enter a valid integer!" << '\n' << y << " is not a valid index" << '\n';
+		return;
+	}
+	std::cout << "What new value do you want it to be?" << '\n';
+	std::cin >> x.at(y);
+	std::cout << x.at(y);
+}
 
 int main()
 {
@@ -20,4 +34,5 @@ int main()
 	std::cin >> x;
 	std::cout << integers.at(x) << '\n';
 	indexDisplay(integers);
+	indexChange(integers);
 }
