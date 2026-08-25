@@ -35,7 +35,7 @@ void indexChange(std::vector<int>& x)
 	}
 }
 
-int index()
+void index()
 {
 	char retry{};
 	do
