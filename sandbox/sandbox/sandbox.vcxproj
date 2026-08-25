@@ -142,6 +142,7 @@
     <ClCompile Include="pointers_and_reference.cpp" />
     <ClCompile Include="sandbox.cpp" />
     <ClCompile Include="structs.cpp" />
+    <ClCompile Include="vectors.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

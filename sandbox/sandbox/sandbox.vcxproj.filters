@@ -24,5 +24,8 @@
     <ClCompile Include="structs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="vectors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
