@@ -10,6 +10,7 @@ ipch/
 *.VC.db-wal
 *.VC.opendb
 *.ipch
+*.vcxproj.user
 
 # Build artifacts
 Debug/
@@ -21,4 +22,3 @@ x64/
 *.idb
 *.pdb
 *.exe
-
