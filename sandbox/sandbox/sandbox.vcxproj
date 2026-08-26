@@ -139,6 +139,7 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="player_roster.cpp" />
     <ClCompile Include="pointers_and_reference.cpp" />
     <ClCompile Include="sandbox.cpp" />
     <ClCompile Include="structs.cpp" />
