@@ -1,6 +1,10 @@
 #include <iostream>
 #include <string>
 
+// Struct practice
+// Covers defining custom types, creating struct objects,
+// accessing members, and passing structs by reference to functions.
+
 struct player
 {
 	std::string name{};

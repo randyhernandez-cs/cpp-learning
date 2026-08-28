@@ -1,6 +1,11 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
+// Vector practice
+// Covers vector initialization, indexing, size, iteration,
+// passing vectors by reference, modifying elements, and index validation.
+
 void indexDisplay(const std::vector<int>& x)
 {
 	for (int y{}; y < x.size(); ++y)
