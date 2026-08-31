@@ -1,15 +1,18 @@
 #include "circle_functions.h"
 
-bool negativeCheck(double radius)
+bool negativeCheck(const Calculations& x)
 {
-	return radius < 0;
+	return x.radius < 0;
 }
-double circleDiameter(double radius) {
-	return radius * 2;
+double circleDiameter(const Calculations& x) 
+{
+	return x.radius * 2;
 }
-double circleArea(double radius, double pi) {
-	return radius * radius * pi;
+double circleArea(const Calculations& x) 
+{
+	return x.radius * x.radius * x.pi;
 }
-double circleCircumference(double radius, double pi) {
-	return  radius * pi * 2;
+double circleCircumference(const Calculations& x)
+{
+	return  x.radius * x.pi * 2;
 }
