@@ -1,6 +1,6 @@
 #include "circle_functions.h"
 #include <iostream>
-
+// User inputs radius and project does calculations to find the circumference, diameter, and area of the radius in circle form.
 int main()
 {
     Calculations circle;
