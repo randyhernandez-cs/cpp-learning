@@ -1,9 +1,10 @@
 #ifndef CIRCLE_FUNCTIONS_H
 #define CIRCLE_FUNCTIONS_H
+constexpr double pi{ 3.14159 };
+
 struct Calculations
 {
 	double radius{};
-	const double pi{ 3.14159 };
 };
 double circleDiameter(const Calculations& x);
 double circleArea(const Calculations& x);
