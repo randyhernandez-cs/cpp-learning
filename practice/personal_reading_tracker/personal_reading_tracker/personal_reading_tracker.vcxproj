@@ -139,7 +139,11 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="personal_reading_body.cpp" />
     <ClCompile Include="personal_reading_tracker.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="reader_tracker_header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
