@@ -1,9 +1,10 @@
 #pragma once
-#include <array>
 
-struct book 
+struct Book 
 {
 	std::string title{};
-	int readingProgress{};
+	int currentPage{};
+	int totalPage{};
 };
-std::vector<book>
+
+
