@@ -12,4 +12,5 @@ int main()
 	std::cout << "please choose a book out of this catalogue (0-2)" << '\n';
 	std::cout << "0.The Fifth Season" << '\n' << "1.Wool" << '\n' << "2.Evolution of Desire" << '\n';
 	std::cin >> choice;
+	bookSelection(collection, choice);
 }
