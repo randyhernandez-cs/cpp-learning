@@ -23,6 +23,7 @@ int main()
 			std::cout << "Which book would you like to change progress on? (0-2)" << '\n';
 			std::cout << "0.The Fifth Season" << '\n' << "1.Wool" << '\n' << "2.Evolution of Desire" << '\n';
 			std::cin >> choice;
+			progressUpdate(collection, choice);
 		}
 		std::cout << "(y/n) to restart or end the application" << '\n';
 		std::cin >> retry;
