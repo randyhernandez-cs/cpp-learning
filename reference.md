@@ -520,3 +520,63 @@ y = 5    5 < 5 → false, stop
 ```
 
 Inside the loop, `x.at(y)` uses the current value of `y` as an index to access the corresponding element.
+
+## Arrays
+
+### std::vector — Dynamic Array
+Grows and shrinks at runtime. Use when size changes.
+
+#include <vector>
+
+std::vector<int> v{ 1, 2, 3 };   // 3 elements
+v.push_back(4);                   // grows to 4 elements
+std::cout << v[0];                // access by index
+std::cout << v.at(0);             // access with bounds checking
+std::cout << v.size();            // how many elements
+
+| Access | Checks Bounds? |
+|---|---|
+| v[i] | No — fast, dangerous |
+| v.at(i) | Yes — safe, slightly slower |
+
+### std::array — Fixed-Size Array
+Size known at compile time. Cannot grow or shrink.
+
+#include <array>
+
+std::array<int, 5> arr{ 1, 2, 3, 4, 5 };  // exactly 5 elements, forever
+std::cout << arr[0];                       // access by index
+std::cout << std::get<0>(arr);             // compile-time access
+std::cout << arr.size();                   // returns 5
+
+| Feature | std::array | std::vector |
+|---|---|---|
+| Size | Fixed at compile time | Dynamic |
+| Can grow? | No | Yes |
+| constexpr friendly | Yes | Limited |
+| Performance | Slightly faster | Slightly slower |
+
+### size_t — The Index Type
+
+std::size_t is an unsigned integer used for sizes and indices.
+
+for (std::size_t i{0}; i < v.size(); ++i)
+    std::cout << v[i];
+
+Why use it: .size() returns size_t. Indices can't be negative. Mixing int with size_t can cause signed/unsigned bugs.
+
+### Passing Arrays to Functions
+
+// Vector — by const reference (no copy)
+void printVec(const std::vector<int>& v);
+
+// Array — needs both type and size in the template
+template <typename T, std::size_t N>
+void printArr(const std::array<T, N>& arr);
+
+### Key Rules
+- Use std::vector when the size can change
+- Use std::array when the size is fixed
+- Use size_t for indices and loop counters over containers
+- Use .at() when the index might be invalid
+- Pass containers by const & — never by value (copies everything)
