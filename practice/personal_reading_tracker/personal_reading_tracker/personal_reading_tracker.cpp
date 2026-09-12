@@ -16,14 +16,19 @@ int main()
 		std::cout << "0.The Fifth Season" << '\n' << "1.Wool" << '\n' << "2.Evolution of Desire" << '\n';
 		std::cin >> choice;
 		bookSelection(collection, choice);
-		std::cout << "Would you like to change the progress of a book? (y/n)" << '\n';
-		std::cin >> retry;
-		if (retry == 'y' || retry == 'Y')
+		std::cout << "Would you like to change the progress of a book?" << '\n';
+		if (decision(retry))
 		{
 			std::cout << "Which book would you like to change progress on? (0-2)" << '\n';
 			std::cout << "0.The Fifth Season" << '\n' << "1.Wool" << '\n' << "2.Evolution of Desire" << '\n';
 			std::cin >> choice;
 			progressUpdate(collection, choice);
+		}
+		std::cout << "Would you like to add a book? (y/n)" << '\n';
+		std::cin >> retry;
+		if (retry == 'y' || retry == 'Y')
+		{
+
 		}
 		std::cout << "(y/n) to restart or end the application" << '\n';
 		std::cin >> retry;
