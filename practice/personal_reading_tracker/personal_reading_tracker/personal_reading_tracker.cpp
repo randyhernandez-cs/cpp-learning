@@ -25,8 +25,7 @@ int main()
 			progressUpdate(collection, choice);
 		}
 		std::cout << "Would you like to add a book? (y/n)" << '\n';
-		std::cin >> retry;
-		if (retry == 'y' || retry == 'Y')
+		if (decision(retry))
 		{
 
 		}

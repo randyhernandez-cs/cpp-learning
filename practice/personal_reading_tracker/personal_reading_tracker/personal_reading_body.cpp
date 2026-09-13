@@ -10,10 +10,12 @@ bool decision(char& retry)
 		std::cin >> retry;
 		if (retry == 'Y' || retry == 'y')
 		{
+			std::cin.ignore(100, '\n');
 			return true;
 		}
 		else if (retry == 'N' || retry == 'n')
 		{
+			std::cin.ignore(100, '\n');
 			return false;
 		}
 		else
@@ -38,5 +40,5 @@ void progressUpdate(std::vector<Book>& collection, const size_t choice)
 }
 void bookAdd(std::vector<Book>& collection, const size_t choice)
 {
-
+	
 }
