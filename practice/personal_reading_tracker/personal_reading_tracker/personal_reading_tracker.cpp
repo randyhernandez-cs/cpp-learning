@@ -27,7 +27,7 @@ int main()
 		std::cout << "Would you like to add a book? (y/n)" << '\n';
 		if (decision(retry))
 		{
-
+			bookAdd(collection);
 		}
 		std::cout << "(y/n) to restart or end the application" << '\n';
 		std::cin >> retry;

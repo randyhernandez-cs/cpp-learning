@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <string>
 #include "reader_tracker_header.h"
 bool decision(char& retry)
 {
@@ -38,7 +39,15 @@ void progressUpdate(std::vector<Book>& collection, const size_t choice)
 	std::cin >> collection[choice].currentPage;
 	std::cout << "Your updated progress for " << collection[choice].title << " is " << collection[choice].currentPage << " out of " << collection[choice].totalPage << " pages" << '\n';
 }
-void bookAdd(std::vector<Book>& collection, const size_t choice)
+void bookAdd(std::vector<Book>& collection)
 {
-	
+	collection.push_back(Book {"unnamed", 0, 0});
+	std::cout << "Please insert the name of the book:";
+	std::getline(std::cin, collection.back().title);
+	std::cout << '\n' << "Please insert the total pages of the book:";
+	std::cin >> collection.back().totalPage;
+	std::cout <<'\n' << "Please insert your current page on the book:";
+	std::cin >> collection.back().currentPage;
+	std::cout << "The book you added is called: " << collection.back().title << '\n';
+	std::cout << "its current and total page number is: " << collection.back().currentPage << "/" << collection.back().totalPage << '\n';
 }
