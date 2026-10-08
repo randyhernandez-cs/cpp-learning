@@ -9,6 +9,10 @@ struct Sensor
 	std::string name{ "" };
 	double temperature{};
 };
+void sensorEdit()
+{
+
+}
 
 int main()
 {
@@ -18,5 +22,9 @@ int main()
 		Sensor{"Living Room", 78.2},
 		Sensor{"Attic", 88 }
 	};
-	std::cout << sensorStorage.at(0).name;
+	std::cout << "Which sensor do you want to edit?" << '\n';
+	for (std::size_t i{ 0 }; i < sensorStorage.size();++i)
+	{
+		std::cout << i << '.' << sensorStorage.at(i).name << '\n';
+	}
 }
