@@ -17,7 +17,15 @@ void sensorEdit(std::array<Sensor, 4>& storage,const std::size_t& x)
 	std::cin >> tempChange;
 	storage.at(x).temperature += tempChange;
 }
-
+bool validIndexCheck(const size_t& x)
+{
+	if (x > 3)
+	{
+		std::cout << "Please enter a correct number!";
+		return false;
+	}
+	return true;
+}
 int main()
 {
 	std::size_t x{};
@@ -27,12 +35,15 @@ int main()
 		Sensor{"Living Room", 78.2},
 		Sensor{"Attic", 88 }
 	};
-	std::cout << "Which sensor do you want to change the temperature on?" << '\n';
-	for (std::size_t i{ 0 }; i < sensorStorage.size();++i)
+	do
 	{
-		std::cout << i << '.' << sensorStorage.at(i).name << '\n';
-	}
-	std::cin >> x;
+		std::cout << "Which sensor do you want to change the temperature on?" << '\n';
+		for (std::size_t i{ 0 }; i < sensorStorage.size();++i)
+		{
+			std::cout << i << '.' << sensorStorage.at(i).name << '\n';
+		}
+		std::cin >> x;
+	} while (!validIndexCheck(x));
 	sensorEdit(sensorStorage, x);
 	std::cout << "Your updated temperature is: " << sensorStorage.at(x).temperature << '\n';
 }
