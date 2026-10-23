@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <array>
+#include <limits>
 
 struct Sensor 
 {
@@ -19,9 +20,16 @@ void sensorEdit(std::array<Sensor, 4>& storage,const std::size_t& x)
 }
 bool validIndexCheck(const size_t& x)
 {
-	if (x > 3 ||std::cin.fail())
+	if (std::cin.fail() || x > 3 )
 	{
-		std::cout << "Please enter a correct number!";
+		if (std::cin.fail())
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "Please enter a proper number!" << '\n';
+			return false;
+		}
+		std::cout << "Please enter a correct number!" << '\n';
 		return false;
 	}
 	return true;
